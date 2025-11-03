@@ -7,21 +7,24 @@
   padding: 14px 24px;
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
   transition: all 0.3s ease;
 }
 
+/* Logo */
 .nav__logo a {
   color: var(--accent);
   font-weight: 700;
   font-size: 22px;
+  text-decoration: none;
   letter-spacing: 0.5px;
 }
 
+/* Nav Links */
 .nav__links {
   display: flex;
-  gap: 20px;
   align-items: center;
+  gap: 20px;
   transition: all 0.3s ease;
 }
 
@@ -30,6 +33,7 @@
   font-weight: 500;
   padding: 8px 12px;
   border-radius: 8px;
+  text-decoration: none;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -43,6 +47,7 @@
   color: var(--accent);
 }
 
+/* Cart Badge */
 .cart-link {
   display: inline-flex;
   align-items: center;
@@ -59,48 +64,69 @@
   font-weight: 700;
 }
 
-.menu-toggle {
+/* Mobile Menu Icon */
+.menu-icon {
   display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
+  font-size: 28px;
+  color: var(--accent);
   cursor: pointer;
-  color: #333;
+  user-select: none;
+  transition: transform 0.3s ease;
 }
 
+.menu-icon:active {
+  transform: scale(0.9);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
   .nav {
     padding: 12px 18px;
   }
 
   .nav__links {
     position: absolute;
-    top: 60px;
+    top: 64px;
     right: 0;
     background: #fff;
     flex-direction: column;
-    width: 220px;
+    align-items: flex-start;
+    width: 240px;
     padding: 16px;
     border-left: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     border-radius: 0 0 0 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
     transform: translateX(100%);
     opacity: 0;
     pointer-events: none;
+    transition: all 0.35s ease-in-out;
   }
 
-  .nav__links.show {
+  .nav__links.active {
     transform: translateX(0);
     opacity: 1;
-    pointer-events: auto;
+    pointer-events: all;
   }
 
-  .menu-toggle {
+  .nav__links a {
     display: block;
+    width: 100%;
+    padding: 12px 10px;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+
+  .nav__links a:hover {
+    background: rgba(255, 111, 97, 0.08);
   }
 }
 
+/* Small Devices */
 @media (max-width: 480px) {
   .nav__logo a {
     font-size: 20px;
@@ -108,6 +134,12 @@
 
   .nav__links {
     width: 100%;
-    top: 56px;
+    border-left: none;
+    border-radius: 0;
+  }
+
+  .nav__links a {
+    text-align: center;
+    padding: 10px;
   }
 }

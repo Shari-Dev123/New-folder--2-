@@ -321,3 +321,117 @@
     min-width: 200px;
   }
 }
+/* === Mobile and Tablet Optimization === */
+@media (max-width: 1024px) {
+  .scroll-container {
+    gap: 14px;
+    padding: 0 8px;
+  }
+
+  .product-card {
+    min-width: 180px;
+  }
+
+  .product-card img {
+    height: 160px;
+  }
+
+  .category-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* === Mobile Phones (≤768px) === */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 80px 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .category-section {
+    padding: 40px 10px;
+  }
+
+  .scroll-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+  }
+
+  .product-card {
+    min-width: 160px;
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+  }
+
+  .product-card img {
+    height: 140px;
+  }
+
+  /* Overlay scaling */
+  .overlay-box {
+    width: 92%;
+    max-width: 340px;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .overlay-box img {
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  .overlay-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .close-btn {
+    font-size: 22px;
+  }
+}
+
+/* === Small Phones (≤480px) === */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .category-title {
+    font-size: 1.3rem;
+  }
+
+  .product-card {
+    min-width: 140px;
+  }
+
+  .product-card img {
+    height: 120px;
+  }
+
+  .overlay-box {
+    width: 90%;
+    max-width: 300px;
+    padding: 14px;
+  }
+
+  .overlay-actions .btn {
+    font-size: 0.85rem;
+    padding: 8px 18px;
+  }
+}

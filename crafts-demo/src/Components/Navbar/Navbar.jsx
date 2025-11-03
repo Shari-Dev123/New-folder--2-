@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import "./Navbar.css";
+import "./Navabr.css";
 import { useCart } from "../../context/CartContext.jsx";
 
 const Navbar = () => {

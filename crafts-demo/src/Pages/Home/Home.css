@@ -1,4 +1,6 @@
-/* General Page */
+/* ================================
+   🌸 General Page Setup
+================================ */
 .home-page {
   font-family: "Poppins", sans-serif;
   background: #f9fafb;
@@ -6,7 +8,9 @@
   overflow-x: hidden;
 }
 
-/* Hero Section */
+/* ================================
+   🌸 Hero Section
+================================ */
 .hero {
   height: 100vh;
   display: flex;
@@ -71,7 +75,9 @@
   color: #fff;
 }
 
-/* Intro Section */
+/* ================================
+   🌸 Intro Section
+================================ */
 .intro {
   text-align: center;
   padding: 60px 20px 20px;
@@ -88,9 +94,21 @@
   margin: 0 auto;
 }
 
-/* Category Sections */
+/* ================================
+   🌸 Category Section
+================================ */
 .category-section {
   padding: 60px 20px;
+  background: #fff;
+  border-radius: 16px;
+  margin: 30px auto;
+  max-width: 1200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+
+.category-section:hover {
+  transform: translateY(-4px);
 }
 
 .category-title {
@@ -98,21 +116,33 @@
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 20px;
+  color: #333;
 }
 
+/* Product Cards Scroll Area */
 .scroll-container {
   display: flex;
   gap: 18px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 0 10px;
+  padding: 10px 0;
 }
 
+.scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #ffb6d9;
+  border-radius: 10px;
+}
+
+/* Product Card Style */
 .product-card {
   min-width: 240px;
-  background: #fff;
+  background: #fff7fb;
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 10px rgba(255, 102, 179, 0.15);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
@@ -132,11 +162,34 @@
 }
 
 .product-card:hover {
-  transform: translateY(-6px);
+  transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(255, 102, 179, 0.3);
 }
 
-/* Why Choose Us */
+/* Show More Button */
+.show-more {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.show-more-btn {
+  background: #ff66b3;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 24px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.show-more-btn:hover {
+  background: #ff4da6;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   🌸 Why Choose Us
+================================ */
 .why-us {
   background: #fff;
   padding: 80px 20px;
@@ -174,7 +227,9 @@
   margin-bottom: 10px;
 }
 
-/* Testimonials */
+/* ================================
+   🌸 Testimonials
+================================ */
 .testimonials {
   background: #fef5f8;
   padding: 80px 20px;
@@ -213,7 +268,9 @@
   color: #ff66b3;
 }
 
-/* Call-to-Action Section */
+/* ================================
+   🌸 Call to Action
+================================ */
 .cta-section {
   background: linear-gradient(135deg, #ff66b3, #ff99cc);
   color: #fff;
@@ -241,7 +298,9 @@
   background: #ffe0ef;
 }
 
-/* Overlay */
+/* ================================
+   🌸 Overlay Product Popup
+================================ */
 .overlay {
   position: fixed;
   inset: 0;
@@ -287,7 +346,9 @@
   cursor: pointer;
 }
 
-/* Animations */
+/* ================================
+   🌸 Animations
+================================ */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -298,38 +359,23 @@
   to { transform: scale(1); opacity: 1; }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.2rem;
-  }
+/* ================================
+   🌸 Responsive Design
+================================ */
 
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
-
-  .scroll-container {
-    gap: 10px;
-  }
-
-  .product-card {
-    min-width: 200px;
-  }
-}
-/* === Mobile and Tablet Optimization === */
+/* Tablet */
 @media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
   .scroll-container {
     gap: 14px;
     padding: 0 8px;
   }
 
   .product-card {
-    min-width: 180px;
+    min-width: 200px;
   }
 
   .product-card img {
@@ -337,11 +383,11 @@
   }
 
   .category-title {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 }
 
-/* === Mobile Phones (≤768px) === */
+/* Mobile View */
 @media (max-width: 768px) {
   .hero {
     height: auto;
@@ -365,35 +411,28 @@
     padding: 40px 10px;
   }
 
+  /* List layout for categories */
   .scroll-container {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
   }
 
   .product-card {
-    min-width: 160px;
-    flex: 0 0 auto;
-    scroll-snap-align: center;
+    width: 90%;
+    max-width: 320px;
+    margin-bottom: 12px;
   }
 
-  .product-card img {
-    height: 140px;
+  .show-more {
+    margin-top: 12px;
   }
 
-  /* Overlay scaling */
   .overlay-box {
     width: 92%;
     max-width: 340px;
     padding: 16px;
     border-radius: 12px;
-  }
-
-  .overlay-box img {
-    max-height: 200px;
-    object-fit: cover;
   }
 
   .overlay-actions {
@@ -406,7 +445,7 @@
   }
 }
 
-/* === Small Phones (≤480px) === */
+/* Small Phones */
 @media (max-width: 480px) {
   .hero-title {
     font-size: 1.8rem;
@@ -417,11 +456,11 @@
   }
 
   .product-card {
-    min-width: 140px;
+    width: 95%;
   }
 
   .product-card img {
-    height: 120px;
+    height: 140px;
   }
 
   .overlay-box {

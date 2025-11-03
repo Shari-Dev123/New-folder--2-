@@ -15,7 +15,7 @@ import Chocolate1 from "../../assets/Chocolate bouquet1.png";
 const categories = [
   {
     id: 1,
-    title: "Chocolate Bouquets 🍫",
+    title: "Chocolate Bouquets",
     direction: "left",
     products: [
       { id: 101, name: "Deluxe Chocolate Bouquet", img: Chocolate1 },
@@ -25,7 +25,7 @@ const categories = [
   },
   {
     id: 2,
-    title: "Handmade Cards 💌",
+    title: "Handmade Cards ",
     direction: "right",
     products: [
       { id: 201, name: "Birthday Card", img: handmade1 },
@@ -35,7 +35,7 @@ const categories = [
   },
   {
     id: 3,
-    title: "Mini Cards ✨",
+    title: "Mini Cards ",
     direction: "left",
     products: [
       { id: 301, name: "Tiny Love Notes", img: Mini2 },
@@ -45,7 +45,7 @@ const categories = [
   },
   {
     id: 4,
-    title: "Scrapbooks 📚",
+    title: "Scrapbooks ",
     direction: "right",
     products: [
       { id: 401, name: "Custom Scrapbook", img: scrapbook },
@@ -56,26 +56,19 @@ const categories = [
 ];
 
 const Home = () => {
-  const [pausedCategory, setPausedCategory] = useState(null);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
-  const handleProductClick = (categoryId, product) => {
-    setPausedCategory(categoryId);
-    setSelectedProduct(product);
-  };
-
-  const handleCloseOverlay = () => {
-    setPausedCategory(null);
-    setSelectedProduct(null);
-  };
+  const handleProductClick = (product) => setSelectedProduct(product);
+  const handleCloseOverlay = () => setSelectedProduct(null);
 
   return (
     <div className="home-page">
+      
       <section className="hero full-height">
         <div className="hero-content">
           <h1 className="hero-title">Crafts by Craftians</h1>
           <p className="hero-subtitle">
-            Discover handmade decor and personalized gifts crafted with love.  
+            Discover handmade decor and personalized gifts crafted with love.
             Every piece tells your story.
           </p>
           <div className="hero-buttons">
@@ -94,28 +87,24 @@ const Home = () => {
 
       <section className="intro">
         <h2>Our Collections</h2>
-        <p>Scroll through our handcrafted categories and find the perfect piece to gift or treasure.</p>
+        <p>Browse our handcrafted product categories and find something special.</p>
       </section>
 
       {categories.map((cat) => (
-        <section
-          key={cat.id}
-          className={`category-section ${cat.direction === "right" ? "scroll-right" : "scroll-left"} ${
-            pausedCategory === cat.id ? "paused" : ""
-          }`}
-        >
+        <section key={cat.id} className="category-section">
           <h2 className="category-title">{cat.title}</h2>
           <div className="scroll-container">
             {cat.products.map((p) => (
-              <div
-                key={p.id}
-                className="product-card"
-                onClick={() => handleProductClick(cat.id, p)}
-              >
+              <div key={p.id} className="product-card" onClick={() => handleProductClick(p)}>
                 <img src={p.img} alt={p.name} />
                 <p>{p.name}</p>
               </div>
             ))}
+          </div>
+          <div className="show-more">
+            <Link to="/products" className="btn show-more-btn">
+              Show More →
+            </Link>
           </div>
         </section>
       ))}
@@ -126,22 +115,22 @@ const Home = () => {
           <div className="why-card">
             <FaGift className="icon" />
             <h3>Handcrafted Gifts</h3>
-            <p>Every item is uniquely made with detail and creativity.</p>
+            <p>Every item is uniquely made with care and creativity.</p>
           </div>
           <div className="why-card">
             <FaHeart className="icon" />
             <h3>Made with Love</h3>
-            <p>Each product carries personal warmth and authenticity.</p>
+            <p>Each product carries warmth and authenticity.</p>
           </div>
           <div className="why-card">
             <FaHandshake className="icon" />
             <h3>Custom Orders</h3>
-            <p>Personalize your orders to match your style and emotions.</p>
+            <p>Personalize your orders to match your style and story.</p>
           </div>
           <div className="why-card">
             <FaStar className="icon" />
             <h3>Customer Satisfaction</h3>
-            <p>We prioritize quality, trust, and lasting relationships.</p>
+            <p>We value trust, quality, and long-term relationships.</p>
           </div>
         </div>
       </section>
@@ -158,15 +147,16 @@ const Home = () => {
             <h4>— Ali R.</h4>
           </div>
           <div className="testimonial-card">
-            <p>"They were super friendly and delivered exactly what I imagined!"</p>
+            <p>"They delivered exactly what I imagined. Highly recommend!"</p>
             <h4>— Sarah T.</h4>
           </div>
         </div>
       </section>
 
+      {/* CTA */}
       <section className="cta-section">
         <h2>Want Something Custom?</h2>
-        <p>We create personalized gifts for birthdays, weddings, and all your special moments.</p>
+        <p>We create personalized gifts for birthdays, weddings, and special occasions.</p>
         <Link to="/contact" className="btn primary">Contact Us</Link>
       </section>
 
@@ -177,9 +167,7 @@ const Home = () => {
             <h3>{selectedProduct.name}</h3>
             <div className="overlay-actions">
               <button className="btn primary">Add to Cart</button>
-              <Link className="btn secondary" to="/products">
-                View in Products
-              </Link>
+              <Link to="/products" className="btn secondary">View in Products</Link>
             </div>
             <button className="close-btn" onClick={handleCloseOverlay}>×</button>
           </div>

@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
         <h3>{product.name}</h3>
         <p className="muted">{product.description}</p>
         <div className="card-footer">
-          <strong>${product.price.toFixed(2)}</strong>
+          <strong>Rs{product.price.toFixed(2)}</strong>
           <button onClick={() => addItem(product)}>Add to cart</button>
         </div>
       </div>

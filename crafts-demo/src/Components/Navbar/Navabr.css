@@ -11,7 +11,6 @@
   transition: all 0.3s ease;
 }
 
-/* Logo */
 .nav__logo a {
   color: var(--accent);
   font-weight: 700;
@@ -20,7 +19,6 @@
   letter-spacing: 0.5px;
 }
 
-/* Nav Links */
 .nav__links {
   display: flex;
   align-items: center;
@@ -47,7 +45,6 @@
   color: var(--accent);
 }
 
-/* Cart Badge */
 .cart-link {
   display: inline-flex;
   align-items: center;
@@ -64,7 +61,6 @@
   font-weight: 700;
 }
 
-/* Mobile Menu Icon */
 .menu-icon {
   display: none;
   font-size: 28px;
@@ -78,7 +74,6 @@
   transform: scale(0.9);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
@@ -126,7 +121,6 @@
   }
 }
 
-/* Small Devices */
 @media (max-width: 480px) {
   .nav__logo a {
     font-size: 20px;
